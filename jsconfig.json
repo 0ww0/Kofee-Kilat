@@ -1,0 +1,60 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "types": [
+            "vite/client"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "resources/*"
+            ],
+            "@component/*": [
+                "resources/views/components/*"
+            ],
+            "@shared/*": [
+                "resources/views/components/shared/*"
+            ],
+            "@slot/*": [
+                "resources/views/components/slot/*"
+            ],
+            "@layout/*": [
+                "resources/views/layouts/*"
+            ],
+            "@page/*": [
+                "resources/views/pages/*"
+            ],
+            "@plugin/*": [
+                "resources/views/plugin/*"
+            ],
+            "@store/*": [
+                "resources/views/stores/*"
+            ],
+            "@local/*": [
+                "./components/*"
+            ],
+            "#global": [
+                "resources/styles/global.scss"
+            ],
+            "#config": [
+                "resources/styles/config.scss"
+            ]
+        }
+    },
+    "include": [
+        "resources/**/*"
+    ],
+    "exclude": ["node_modules", "public"]
+}
