@@ -1,5 +1,6 @@
 <script setup>
     import { computed } from 'vue'
+    import { RiArrowDownSLine } from '@remixicon/vue'
 
     const props = defineProps({
         name: [Boolean, String],
@@ -27,7 +28,7 @@
         <div class="input-select">
             <icon-wrapper
                 class="select-icon" 
-                icon="ri:arrow-down-s-line" 
+                :icon="RiArrowDownSLine" 
                 size="20" 
             />
             <select

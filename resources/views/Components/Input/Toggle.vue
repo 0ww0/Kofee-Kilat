@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiToggleFill, RiToggleLine } from '@remixicon/vue'
     
     const props = defineProps({
         label: [String],
@@ -12,16 +13,16 @@
             type: [Number],
             default: 24
         },
-        fill: {
+        color: {
             type: [String],
-            default: '#000'
+            default: 'black'
         }
     })
 
     const emits = defineEmits(['update:modelValue']);
 
     const state = reactive({
-        icons: computed(() => { return props.modelValue ? 'ri:toggle-fill' : 'ri:toggle-line' })
+        icons: computed(() => { return props.modelValue ? RiToggleFill : RiToggleLine })
     })
     
     const inputClass = computed(() => ({
@@ -43,7 +44,7 @@
             @change="toggleValue"
             :class="inputClass"
         />
-        <icon-wrapper :icon="state.icons" :size="size" :fill="fill"/>
+        <icon-wrapper :icon="state.icons" :size="size" :color="color"/>
         <span>{{ label }}</span>
     </label>
 </template>

@@ -1,5 +1,6 @@
 <script setup>
     import { computed } from 'vue'
+    import { RiCheckboxLine, RiCheckboxBlankLine } from '@remixicon/vue' 
 
     const props = defineProps({
         label: [String],
@@ -25,7 +26,7 @@
     };
 
     const getIcon = (value) => {
-        return isSelected(value) ? 'ri:checkbox-line' : 'ri:checkbox-blank-line';
+        return isSelected(value) ? RiCheckboxLine : RiCheckboxBlankLine;
     };
 
     const updateValue = (value) => {

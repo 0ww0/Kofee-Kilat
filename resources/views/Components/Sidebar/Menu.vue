@@ -1,10 +1,11 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiLayoutLeft2Fill, RiArrowUpSLine, RiArrowDownSLine } from '@remixicon/vue'
 
     const props = defineProps({
         icon: {
-            type: [String],
-            default: "ri:layout-left-2-fill",
+            type: [Object],
+            default: RiLayoutLeft2Fill,
         },
         name: [String],
         active: [Boolean],
@@ -13,7 +14,7 @@
     const state = reactive({
         open: false,
         chevron: computed(() => {
-            return state.open ? "ri:arrow-up-s-line" : "ri:arrow-down-s-line"
+            return state.open ? RiArrowUpSLine : RiArrowDownSLine
         }),
         dropdown: computed(() => {
             return { "is-closed": !state.open, "is-open": state.open }

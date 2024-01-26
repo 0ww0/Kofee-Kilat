@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiCheckboxLine, RiCheckboxBlankLine } from '@remixicon/vue'
 
     const props = defineProps({
         label: [String],
@@ -14,7 +15,7 @@
 
     const state = reactive({
         isCheck: computed(() => props.modelValue === props.value),
-        icons: computed(() =>  state.isCheck ? 'ri:checkbox-line' : 'ri:checkbox-blank-line')
+        icons: computed(() =>  state.isCheck ? RiCheckboxLine : RiCheckboxBlankLine)
     })
 
     const inputClass = computed(() => ({

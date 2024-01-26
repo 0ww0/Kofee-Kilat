@@ -19,28 +19,25 @@
         "baseUrl": ".",
         "paths": {
             "@/*": [
-                "resources/*"
+                "resources/views/*"
             ],
             "@component/*": [
-                "resources/views/components/*"
+                "resources/views/Components/*"
             ],
-            "@shared/*": [
-                "resources/views/components/shared/*"
-            ],
-            "@slot/*": [
-                "resources/views/components/slot/*"
+            "@composable/*": [
+                "resources/views/Composables/*"
             ],
             "@layout/*": [
-                "resources/views/layouts/*"
+                "resources/views/Layouts/*"
             ],
             "@page/*": [
-                "resources/views/pages/*"
+                "resources/views/Pages/*"
             ],
             "@plugin/*": [
                 "resources/views/plugin/*"
             ],
             "@store/*": [
-                "resources/views/stores/*"
+                "resources/views/Stores/*"
             ],
             "@local/*": [
                 "./components/*"

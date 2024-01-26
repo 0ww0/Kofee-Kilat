@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiLoader4Line, RiRemixiconLine } from '@remixicon/vue'
 
     const props = defineProps({
         tag: {
@@ -39,7 +40,7 @@
             'animate': props.loading,
         })),
         show: computed(() => props.loading || props.icon),
-        iconfiy: computed(() => props.loading ? 'ri:loader-4-line': (props.icon ? props.icon : 'ri:remixicon-line'))
+        iconRemix: computed(() => props.loading ? RiLoader4Line : (props.icon ? props.icon : RiRemixiconLine ))
     })
 </script>
 
@@ -53,7 +54,7 @@
         <icon-wrapper
             v-if="icons.show"
             :class="icons.className"
-            :icon="icons.iconfiy"
+            :icon="icons.iconRemix"
             :size="16"
         />
         <p>{{ icons.text }}</p>

@@ -1,12 +1,13 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiEye2Line, RiEyeCloseLine } from '@remixicon/vue'
     
     const props = defineProps({
         visible: [Boolean],
     })
 
     const state = reactive({
-        change: computed(() => props.visible ? 'ri:eye-2-line' : 'ri:eye-close-line')
+        change: computed(() => props.visible ? RiEye2Line : RiEyeCloseLine)
     })
 </script>
 

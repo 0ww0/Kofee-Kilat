@@ -1,10 +1,11 @@
 <script setup>
 	import { computed } from 'vue'
+	import { RiSideBarFill } from '@remixicon/vue'
 
     const props = defineProps({
         icon: {
-            type: [String],
-            default: "ri:side-bar-fill",
+            type: [Object],
+            default: RiSideBarFill,
         },
         name: [String],
         link: [String],

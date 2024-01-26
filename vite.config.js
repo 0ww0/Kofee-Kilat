@@ -27,11 +27,11 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@component': path.resolve(__dirname, 'resources/views/components'),
-            '@layout': path.resolve(__dirname, 'resources/views/layouts'),
-            '@page': path.resolve(__dirname, 'resources/views/pages'),
-            '@plugin': path.resolve(__dirname, 'resources/views/plugins'),
-            '@store': path.resolve(__dirname, 'resources/views/stores'),
+            '@component': path.resolve(__dirname, 'resources/views/Components'),
+            '@layout': path.resolve(__dirname, 'resources/views/Layouts'),
+            '@page': path.resolve(__dirname, 'resources/views/Pages'),
+            '@composable': path.resolve(__dirname, 'resources/views/Composables'),
+            '@store': path.resolve(__dirname, 'resources/views/Stores'),
             '#global': path.resolve(__dirname, 'resources/styles/global.scss'),
             '#config': path.resolve(__dirname, 'resources/styles/config.scss'),
         },

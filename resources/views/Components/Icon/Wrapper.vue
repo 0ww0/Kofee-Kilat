@@ -1,20 +1,20 @@
 <script setup>
-    import { Icon } from '@iconify/vue'
-    
     const props = defineProps({
-        icon: [String],
-        fill: [String],
-        size: {
-            type: [String,Number],
-            default: 16
+        icon: [Object],
+        color: {
+            type: [String],
+            default: 'black',
         },
-        rotate: [String,Number],
+        size: {
+            type: [String, Number],
+            default: '24'
+        },
     })
 </script>
 
 <template>
     <div class="icon-wrapper">
-        <Icon :name="icon" :color="fill" :rotate="rotate" :width="size" :height="size" />
+        <component :is="icon" :color="color" :size="size" />
     </div>
 </template>
 

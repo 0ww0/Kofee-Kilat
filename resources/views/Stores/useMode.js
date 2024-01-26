@@ -1,14 +1,17 @@
 import { reactive } from 'vue'
+import { defineStore } from 'pinia'
 
 export const useModeStore = defineStore('🌓 mode', () => {
   	const state = reactive({
-    	isMode: process.browser ? !!localStorage.getItem('mode') : false
+    	isMode: window.localStorage.getItem('mode') === 'true' ? true : false || false
   	})
 
   	const actions = (payload) => {
     	state.isMode = payload
-        if(process.browser) localStorage.setItem('mode', String(state.isMode))
+        window.localStorage.setItem('mode', state.isMode)
   	}
 
   	return { state, actions }
 })
+
+export default useModeStore;

@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiUploadCloud2Line, RiCloseCircleLine } from '@remixicon/vue' 
     
     const props = defineProps({
         name: [String, Boolean],
@@ -39,7 +40,7 @@
         <div class="file-wrapper">
             <label class="file-icon">
                 <icon-wrapper 
-                    icon="ri:upload-cloud-2-line" 
+                    :icon="RiUploadCloud2Line" 
                     size="18" 
                 />
                 <span>Upload</span>
@@ -54,9 +55,9 @@
             <div class="file-name" v-if="state.file">
                 <span>{{ state.file.name }}</span>
                 <icon-wrapper 
-                    icon="ri:close-circle-line"
+                    :icon="RiCloseCircleLine"
                     size="20"
-                    fill="red" 
+                    color="red" 
                     @click="removeFile()"
                 />
             </div>

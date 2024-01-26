@@ -1,5 +1,6 @@
-import { useModeStore } from "@/stores/useMode"
-import { computed, reactive, onMounted,toRefs } from 'vue'
+import { useModeStore } from "@store/useMode"
+import { computed, reactive, onMounted, toRefs } from 'vue'
+import { RiMoonClearLine, RiSunLine } from '@remixicon/vue'
 
 export const useMode = () => {
     const store = useModeStore()
@@ -7,7 +8,7 @@ export const useMode = () => {
 
     const event = reactive({
         theme: computed(() => state.isMode ? 'dark' : 'light'),
-        icon: computed(() => state.isMode ? 'ri:moon-clear-line' : 'ri:sun-line'),
+        icon: computed(() => state.isMode ? RiMoonClearLine : RiSunLine),
     })
 
     // set the initial theme class on mount
@@ -22,7 +23,7 @@ export const useMode = () => {
         document.documentElement.classList.toggle('dark')
     }
 
-    if(process.browser && !localStorage.getItem('mode')) actions(state.isMode)
+    if(!localStorage.getItem('mode')) actions(state.isMode)
 
     return { ...toRefs(event), toggle }
 }

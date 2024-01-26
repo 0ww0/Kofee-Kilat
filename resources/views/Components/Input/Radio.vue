@@ -1,6 +1,7 @@
 <script setup>
     import { computed, reactive } from 'vue'
-    
+    import { RiCheckboxCircleLine, RiCheckboxBlankCircleLine } from '@remixicon/vue'
+
     const props = defineProps({
         label: [String],
         name: [String],
@@ -13,7 +14,7 @@
     const emits = defineEmits(['update:modelValue'])
 
     const state = reactive({
-        icons: computed(() => { return props.modelValue == props.value ? 'ri:checkbox-circle-line' : 'ri:checkbox-blank-circle-line' })
+        icons: computed(() => { return props.modelValue == props.value ? RiCheckboxCircleLine : RiCheckboxBlankCircleLine })
     })
 
     const inputClass = computed(() => ({

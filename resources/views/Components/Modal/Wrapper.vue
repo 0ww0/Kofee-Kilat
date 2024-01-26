@@ -1,5 +1,7 @@
 <script setup>
     import { ref, computed, reactive, watchEffect } from 'vue'
+    import { RiCloseLine } from '@remixicon/vue'
+    import { onClickOutside } from '@vueuse/core'
 
     const props = defineProps({
         className: {
@@ -87,7 +89,7 @@
                 <div class="modal-icon"
                     v-if="!hideClose"
                     @click="emits('closeModal')">
-                    <icon-wrapper icon="ri:close-line" size="32" />
+                    <icon-wrapper :icon="RiCloseLine" size="32" />
                 </div>
                 <div class="modal-header">
                     <slot name="modal-header" />

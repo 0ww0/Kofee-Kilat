@@ -1,5 +1,5 @@
 <script setup>
-    import useLocation from '@/composables/useLocation';
+    import useLocation from '@composable/useLocation';
 
     const path = useLocation()
 </script>

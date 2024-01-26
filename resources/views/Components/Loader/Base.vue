@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import { RiLoaderLine, RiLoader2Line, RiLoader3Line, RiLoader4Line, RiLoader5Line  } from '@remixicon/vue'
     
     const props = defineProps({
         loader: [Number],
@@ -18,18 +19,18 @@
         className: computed(() => ({
             'animate': true
         })),
-        iconify: computed(() => {
+        remixIcon: computed(() => {
             switch (props.loader) {
                 case 2:
-                    return 'ri:loader-2-line';
+                    return RiLoader2Line;
                 case 3:
-                    return 'ri:loader-3-line';
+                    return RiLoader3Line;
                 case 4:
-                    return 'ri:loader-4-line';
+                    return RiLoader4Line;
                 case 5:
-                    return 'ri:loader-5-line';
+                    return RiLoader5Line;
                 default:
-                    return 'ri:loader-line';
+                    return RiLoaderLine;
             }
         })
     })
@@ -38,7 +39,7 @@
 <template>
     <div :class="loaderClass">
         <icon-wrapper 
-            :icon="icon.iconify" 
+            :icon="icon.remixIcon" 
             :class="icon.className"
             :size="size" />
     </div>

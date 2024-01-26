@@ -1,6 +1,7 @@
 <script setup>
     import VueDatePicker from '@vuepic/vue-datepicker'
     import '@vuepic/vue-datepicker/dist/main.css'
+    import { RiCalendar2Line, RiCloseLine } from '@remixicon/vue' 
 
     const props = defineProps({
         name: [String, Boolean],
@@ -54,12 +55,12 @@
         >
             <template #input-icon>
                 <div class="dp__icon dp__input_icon dp__input_icons">
-                    <icon-wrapper icon="ri:calendar-2-line" />
+                    <icon-wrapper :icon="RiCalendar2Line" />
                 </div>
             </template>
             <template #clear-icon="{ clear }">
                 <div class="dp__icon dp__clear_icon dp__input_icons" @click="clear">
-                    <icon-wrapper icon="ri:close-line" fill="#485fc7"/>
+                    <icon-wrapper :icon="RiCloseLine" color="#485fc7"/>
                 </div>
             </template>
         </vue-date-picker>
