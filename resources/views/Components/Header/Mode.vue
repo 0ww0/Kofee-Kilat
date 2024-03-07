@@ -2,12 +2,12 @@
     import {useMode} from '@composable/useMode.js'
     import IconWrapper from '@component/Icon/Wrapper.vue'
 
-    const { icon, toggle } = useMode()
+    const { theme, toggle } = useMode()
 </script>
 
 <template>
     <div class="component-slot mode">
-        <icon-wrapper :icon="icon" @click="toggle()" />
+        <icon-wrapper :icon="theme.icon" @click="toggle()" color="var(--text-color)"/>
     </div>
 </template>
 

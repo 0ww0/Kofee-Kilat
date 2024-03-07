@@ -1,29 +1,35 @@
 import { useModeStore } from "@store/useMode"
-import { computed, reactive, onMounted, toRefs } from 'vue'
-import { RiMoonClearLine, RiSunLine } from '@remixicon/vue'
+import { computed, onMounted } from 'vue'
+import { RiMoonClearLine, RiSunLine, RiComputerLine } from '@remixicon/vue'
 
 export const useMode = () => {
-    const store = useModeStore()
-    const { state, actions } = store
+    const { state, actions } = useModeStore()
 
-    const event = reactive({
-        theme: computed(() => state.isMode ? 'dark' : 'light'),
-        icon: computed(() => state.isMode ? RiMoonClearLine : RiSunLine),
-    })
+    const themes = {
+        system: { name: 'system', icon: RiComputerLine },
+        dark: { name: 'dark', icon: RiMoonClearLine },
+        light: { name: 'light', icon: RiSunLine }
+    }
+    
+    const theme = computed(() => themes[state.mode])
 
-    // set the initial theme class on mount
     onMounted(() => {
-        document.documentElement.classList.add(event.theme)
+        updateThemeClass(theme.value.name)
     })
 
     // toggle the theme class on theme change
     const toggle = () => {
-        actions(!state.isMode)
-        document.documentElement.classList.toggle('light')
-        document.documentElement.classList.toggle('dark')
-    }
+        const nextTheme = { dark: 'light', light: 'system', system: 'dark' }[state.mode]
+        actions(nextTheme);
+        updateThemeClass(nextTheme);
+    };
 
-    if(!localStorage.getItem('mode')) actions(state.isMode)
+    const updateThemeClass = (themeName) => {
+        document.documentElement.classList.remove('theme-dark', 'theme-light', 'theme-system');
+        document.documentElement.classList.add('theme-' + themeName);
+    };
 
-    return { ...toRefs(event), toggle }
+    if (!window.localStorage.getItem('mode')) actions(state.mode)
+
+    return { theme, toggle }
 }
