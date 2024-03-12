@@ -1,0 +1,23 @@
+@mixin textColor($text-color, $text-color-hover) {
+    --text-color: #{$text-color};
+    --text-color-hover: #{$text-color-hover};
+}
+
+@mixin backgroundColor($background-color) {
+    --primary-color: #{$background-color};
+    --background-color: #{$background-color};
+    --background-invert: if(#{$background-color} == #{$light}, #{$dark}, #{$light});
+}
+
+//- Recommendation: math.div($invert-filter, 100) or calc($invert-filter / 100)
+@mixin imageFilter($invert-filter) {
+    .theme-svg img {
+        filter: invert($invert-filter) hue-rotate(180deg * calc($invert-filter / 100));
+    }
+}
+
+@mixin theme($background-color, $text-color, $text-color-hover, $invert-filter) {
+    @include textColor($text-color, $text-color-hover);
+    @include backgroundColor($background-color);
+    @include imageFilter($invert-filter);
+}

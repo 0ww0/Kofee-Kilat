@@ -1,0 +1,19 @@
+.theme-system {
+    color-scheme: light;
+    @include theme($light, $dark, $dark, 0);
+
+    @media (prefers-color-scheme: dark) {
+        color-scheme: dark;
+        @include theme($dark, $light, $white, 100);
+    }
+}
+
+.theme-dark {
+    color-scheme: dark;
+    @include theme($dark, $light, $white, 100);
+}
+
+.theme-light {
+    color-scheme: light;
+    @include theme($light, $dark, $dark, 0);
+}
