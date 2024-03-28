@@ -1,4 +1,5 @@
 import { computed, reactive } from 'vue'
+import { defineStore } from 'pinia'
 
 export const useCopyrightStore = defineStore('©️ copyright', () => {
     const state = reactive({

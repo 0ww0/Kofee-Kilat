@@ -1,13 +1,16 @@
 <script setup>
-    import {useMode} from '@composable/useMode.js'
     import IconWrapper from '@component/Icon/Wrapper.vue'
 
-    const { theme, toggle } = useMode()
+    const props = defineProps({
+        icon: [Object]
+    })
+
+    const emits = defineEmits(['toggle:mode'])
 </script>
 
 <template>
     <div class="component-slot mode">
-        <icon-wrapper :icon="theme.icon" @click="toggle()" color="var(--text-color)"/>
+        <icon-wrapper :icon="icon" @click="emits('toggle:mode')" color="var(--text-color)"/>
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script setup>
-    import { useCopyrightStore } from "@/stores/useCopyright"
+    import { useCopyrightStore } from "@store/useCopyright"
 
     const store = useCopyrightStore()
     const { copyright } = store

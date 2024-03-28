@@ -1,12 +1,9 @@
 <script setup>
-    import HeaderMode from '@component/Header/Mode.vue'
+    import HeaderWrapper from '@component/Header/Wrapper.vue'
 </script>
 
 <template>
-    <div>
-        <HeaderMode />
-        lorem ipsum
-    </div>
+    <HeaderWrapper />
 </template>
 
 <style lang="scss" scoped>

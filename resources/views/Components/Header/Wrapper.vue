@@ -1,27 +1,18 @@
 <script setup>
+    import Logo from './Logo.vue'
+    import Mode from './Mode.vue'
+    import { useMode } from '@composable/useMode.js'
+    import { useIdentityStore } from "@store/useIdentity"
 
+    const store = useIdentityStore()
+    const { getLogo } = store
+    const { theme, toggle } = useMode()
 </script>
 
 <template>
     <header>
-        <div class="header container-fluid">
-            <div class="header-slot">
-                <HeaderLogo />
-            </div>
-            <div class="header-slot">
-                <a class="link" href="//vape-live.ping-u.com.my/dashboard">
-                    <span>Return to Vape Management</span>
-                    <BadgeBase 
-                        type="number" 
-                        :badge="20" 
-                        :size="25"
-                        :position="{x: 0, y: 0}"
-                    />
-                    <BadgeBase />
-                </a>
-                <HeaderMode />
-            </div>
-        </div>
+        <Logo :imageSrc="getLogo(theme.name, 'full')"/>
+        <Mode @toggle:mode="toggle" :icon="theme.icon" />
     </header>
 </template>
 

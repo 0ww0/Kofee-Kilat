@@ -1,9 +1,13 @@
 <script setup>
+  const props = defineProps({
+    imageSrc: [String],
+    altSrc: [String]
+  })
 </script>
 
 <template>
     <div class="component-slot logo">
-        <img src="~/assets/image/dgb.png" alt='Vaper Documentation'>
+        <img :src="imageSrc" :alt='altSrc'>
     </div>
 </template>
 
@@ -11,7 +15,7 @@
     .component-slot {
         position: relative;
         width: 100%;
-        max-width: 60px;
+        max-width: 250px;
         cursor: default;
         padding: 5px;
         margin: 15px 5px;

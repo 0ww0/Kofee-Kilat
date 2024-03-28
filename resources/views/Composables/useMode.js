@@ -2,7 +2,7 @@ import { useModeStore } from "@store/useMode"
 import { computed, onMounted } from 'vue'
 import { RiMoonClearLine, RiSunLine, RiComputerLine } from '@remixicon/vue'
 
-export const useMode = () => {
+export const useMode = () => { 
     const { state, actions } = useModeStore()
 
     const themes = {
