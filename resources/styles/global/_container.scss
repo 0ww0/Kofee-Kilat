@@ -1,32 +1,22 @@
-.container {
+@mixin container {
     width: 100%;
-    max-width: 1440px;
-    padding-left: 0.875em;
-    padding-right: 0.875em;
     margin-left: auto;
     margin-right: auto;
+    padding-left: rem(16);
+    padding-right: rem(16);
+}
 
-    @include media(xs-up) {
-        width: 100%;
-        padding-left: 1.25em;
-        padding-right: 1.25em;
-    }
+.container {
+    @include container;
+    max-width: 1440px;
 
-    @include media(sm-up) {
-        padding-left: 1.5625em;
-        padding-right: 1.5625em;
+    &-slim {
+        @include container;
+        max-width: 1024px;
     }
 
     &-fluid {
-        width: 100%;
-        padding-left: 0.9375em;
-        padding-right: 0.9375em;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    &.slim {
-        max-width: 1024px;
+        @include container;
     }
 }
 

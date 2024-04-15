@@ -6,13 +6,13 @@
 </script>
 
 <template>
-    <div class="component-slot logo">
+    <div class="component header-logo">
         <img :src="imageSrc" :alt='altSrc'>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    .component-slot {
+    .header-logo {
         position: relative;
         width: 100%;
         max-width: 250px;

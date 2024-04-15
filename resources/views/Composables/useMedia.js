@@ -2,11 +2,11 @@ import { reactive, onUnmounted } from 'vue'
 
 export default function useMedia() {
     const media = reactive({
-        isHD: false,
-        isDP: false,
-        isMD: false,
-        isSM: false,
         isXS: false,
+        isSM: false,
+        isMD: false,
+        isDP: false,
+        isHD: false,
     })
 
     const mobile = () => {

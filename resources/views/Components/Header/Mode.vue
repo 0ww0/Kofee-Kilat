@@ -9,13 +9,13 @@
 </script>
 
 <template>
-    <div class="component-slot mode">
+    <div class="component header-mode">
         <icon-wrapper :icon="icon" @click="emits('toggle:mode')" color="var(--text-color)"/>
     </div>
 </template>
 
 <style lang="scss" scoped>
-     .component-slot {
+     .header-mode {
         position: relative;
         width: 100%;
         user-select: none;

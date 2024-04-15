@@ -1,5 +1,6 @@
 <script setup>
     import { computed, reactive } from 'vue'
+    import IconWrapper from '@component/Icon/Wrapper.vue'
     import { RiLoader4Line, RiRemixiconLine } from '@remixicon/vue'
 
     const props = defineProps({
