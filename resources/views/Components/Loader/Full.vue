@@ -17,15 +17,15 @@
 <style lang="scss" scoped>
     .loader-fullpage {
         position: fixed;
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         justify-content: center;
         align-items: center;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
-        @include background(black, 0.5);
-        @include color(white);
+        @include cfg.background(black, 0.5);
+        @include cfg.color(white);
         z-index: 2;
     }
 </style>

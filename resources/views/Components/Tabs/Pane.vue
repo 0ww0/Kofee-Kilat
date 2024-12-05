@@ -32,6 +32,6 @@
 .tab {
     padding: 15px;
     border: 1px solid;
-    @include border($dark);
+    @include cfg.border($dark);
 }
 </style>

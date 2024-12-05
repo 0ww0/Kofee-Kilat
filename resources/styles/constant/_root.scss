@@ -1,11 +1,13 @@
+@use "var";
+
 :root {
-    --black: #{$black};
-    --white: #{$white};
-    --dark: #{$dark};
-    --light: #{$light};
-    --primary: #{$primary};
-    --success: #{$success};
-    --info: #{$info};
-    --danger: #{$danger};
-    --warning: #{$warning};
+    --black: #{var.$black};
+    --white: #{var.$white};
+    --dark: #{var.$dark};
+    --light: #{var.$light};
+    --primary: #{var.$primary};
+    --success: #{var.$success};
+    --info: #{var.$info};
+    --danger: #{var.$danger};
+    --warning: #{var.$warning};
 }

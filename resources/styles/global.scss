@@ -1,6 +1,6 @@
-@import "config";
-@import "constant/root";
-@import "global/font";
-@import "global/general";
-@import "global/container";
-@import "theme";
+@use "config";
+@use "constant/root" as root;
+@use "global/font" as font;
+@use "global/general" as gen;
+@use "global/container" as cont;
+@use "theme" as thm;

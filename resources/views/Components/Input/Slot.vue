@@ -31,7 +31,7 @@
     .slot-label {
         position: relative;
         width: 100%;
-        font-size: rem(14);
+        font-size: cfg.rem(14);
         line-height: 1.5;
         padding: 5px;
     }

@@ -33,13 +33,13 @@
     .sidebar {
         &-slot {
             border-right: 1px solid;
-            @include border(#dadada);
+            @include cfg.border(#dadada);
             overflow-y: auto;
         }
 
         &-block {
             border-bottom: 1px solid;
-            @include border(#dadada);
+            @include cfg.border(#dadada);
 
             &:not(:last-child) {
                 padding-bottom: 15px;
@@ -49,7 +49,7 @@
 
         &-title {
             padding: 10px;
-            font-size: rem(18);
+            font-size: cfg.rem(18);
             font-weight: 600;
         }
     }

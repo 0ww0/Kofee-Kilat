@@ -20,6 +20,6 @@
 
 <style lang="scss" scoped>
     .icon-wrapper {
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
     }
 </style>

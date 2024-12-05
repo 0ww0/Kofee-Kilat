@@ -90,7 +90,7 @@
     .base-label {
         position: relative;
         width: 100%;
-        font-size: rem(14);
+        font-size: cfg.rem(14);
         line-height: 1.5;
         padding: 5px;
     }
@@ -108,23 +108,23 @@
         border-radius: 4px;
         outline: none;
         user-select: none;
-        @include background($white);
-        @include border(#dadada);
-        @include trans(border-color, box-shadow);
+        @include cfg.background(cfg.$white);
+        @include cfg.border(#dadada);
+        @include cfg.trans(border-color, box-shadow);
 
         &:focus, &:active{
-            @include border($primary);
+            @include cfg.border(cfg.$primary);
         }
 
         &:disabled {
-            @include background(#dadada, 0.6);
+            @include cfg.background(#dadada, 0.6);
         }
 
         &.is-error{
-            @include border($danger);
+            @include cfg.border(cfg.$danger);
             
             &:focus{
-                @include border($danger);
+                @include cfg.border(cfg.$danger);
             }
         }
     }

@@ -54,7 +54,7 @@
     .sidebar {
         &-list {
             position: relative;
-            @include flex(column, nowrap);
+            @include cfg.flex(column, nowrap);
             user-select: none;
             font-size: rem(16);
             cursor: pointer;
@@ -63,7 +63,7 @@
         &-dropdown {
             padding: 15px 10px;
             position: relative;
-            @include flex(row, nowrap);
+            @include cfg.flex(row, nowrap);
             align-items: center;
             user-select: none;
             cursor: pointer;
@@ -75,7 +75,7 @@
                 height: 100%;
                 bottom: 0;
                 left: 0;
-                @include background($info);
+                @include cfg.background($info);
                 visibility: hidden;
                 border-radius: 5px;
                 transform: scaleY(0);
@@ -115,7 +115,7 @@
             height: auto;
             visibility: visible;
 
-            @include trans(opacity, height, visibility);
+            @include cfg.trans(opacity, height, visibility);
         }
     }
 </style>

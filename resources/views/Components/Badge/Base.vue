@@ -52,7 +52,7 @@
             height: 100%;
             border-radius: 100%;
             border: 2px solid;
-            @include background($danger);
+            @include cfg.background($danger);
         }
 
         &.is-dot {
@@ -72,8 +72,8 @@
             text-align: center;
             padding-top: 4px;
             padding-bottom: 3px;
-            font-size: rem(12);
-            @include color($white);
+            font-size: cfg.rem(12);
+            @include cfg.color($white);
             z-index: 1;
         }
     }

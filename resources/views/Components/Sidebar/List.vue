@@ -29,7 +29,7 @@
     .sidebar-item {
 		position: relative;
 		padding: 10px 15px;
-		@include flex(row, nowrap);
+		@include cfg.flex(row, nowrap);
 		align-items: center;
 		user-select: none;
 
@@ -40,7 +40,7 @@
 			height: 100%;
 			bottom: 0;
 			left: 0;
-			@include background($primary);
+			@include cfg.background(cfg.$primary);
 			visibility: hidden;
 			border-radius: 5px;
 			transform: scaleY(0);
@@ -57,7 +57,7 @@
 
 		span {
 			position: relative;
-			font-size: rem(16);
+			font-size: cfg.rem(16);
 			margin-left: 10px;
 		}
 	}

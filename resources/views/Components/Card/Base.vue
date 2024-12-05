@@ -28,10 +28,10 @@
 <style lang="scss" scoped>
     .card {
         position: relative;
-        @include flex(row, wrap);
+        @include cfg.flex(row, wrap);
         align-content: flex-start;
-        margin-left: rem(-12);
-        margin-right: rem(-12);
+        margin-left: cfg.rem(-12);
+        margin-right: cfg.rem(-12);
 
         &.is-stretch {
             align-items: stretch;
@@ -42,7 +42,7 @@
         }
 
         &.is-row-reverse {
-            @include flex(row-reverse, nowrap);
+            @include cfg.flex(row-reverse, nowrap);
         }
 
         &.is-justify-start {

@@ -110,13 +110,13 @@
 <style lang="scss" scoped>
     .pagination-component {
 		position: relative;
-		@include flex(row, nowrap);
+		@include cfg.flex(row, nowrap);
 		justify-content: flex-end;
 	}
 
 	.pager-button {
-		@include background(white);
-		font-size: rem(14);
+		@include cfg.background(white);
+		font-size: cfg.rem(14);
 		width: 40px;
 		padding: 6px;
 		border: 1px solid;
@@ -125,14 +125,14 @@
 		user-select: none;
 
 		&.active {
-			@include background($black);
-			@include color($white);
-			border-bottom: 5px solid $primary; 
+			@include cfg.background(cfg.$black);
+			@include cfg.color(cfg.$white);
+			border-bottom: 5px solid cfg.$primary; 
 		}
 	}
 
 	.pager, .label-button {
-		@include flex(row, nowrap);
+		@include cfg.flex(row, nowrap);
 		justify-content: center;
 		align-items: center;
 	}
@@ -143,7 +143,7 @@
 		&.disabled {
 			pointer-events: none;
 			user-select: none;
-			@include color(#dadada);
+			@include cfg.color(#dadada);
 		}
 
 		&:last-child {

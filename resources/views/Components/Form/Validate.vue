@@ -28,15 +28,15 @@
     .are-validate {
         padding: 4px;
         padding-bottom: 0;
-        font-size: rem(10);
+        font-size: cfg.rem(10);
         user-select: none;
 
         &.is-success {
-            @include color($success);
+            @include cfg.color($success);
         }
 
         &.is-error {
-            @include color($danger);
+            @include cfg.color($danger);
         }
 
         &.is-center {

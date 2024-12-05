@@ -25,6 +25,6 @@
         right: 0;
         padding: 8px;
         border: 1px solid transparent;
-        @include color($link);
+        @include cfg.color($link);
     }
 </style>

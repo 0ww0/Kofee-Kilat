@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../constant/var";
+
 @mixin textColor($text-color, $text-color-hover) {
     --text-color: #{$text-color};
     --text-color-hover: #{$text-color-hover};
@@ -6,7 +9,7 @@
 @mixin backgroundColor($background-color) {
     --primary-color: #{$background-color};
     --background-color: #{$background-color};
-    --background-invert: if(#{$background-color} == #{$light}, #{$dark}, #{$light});
+    --background-invert: if(#{$background-color} == #{var.$light}, #{var.$dark}, #{var.$light});
 }
 
 //- Recommendation: math.div($invert-filter, 100) or calc($invert-filter / 100)

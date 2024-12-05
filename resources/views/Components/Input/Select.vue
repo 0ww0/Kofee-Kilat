@@ -54,7 +54,7 @@
     .select-label {
         position: relative;
         width: 100%;
-        font-size: rem(14);
+        font-size: cfg.rem(14);
         line-height: 1.5;
         padding: 5px;
     }
@@ -70,7 +70,7 @@
         top: 0px;
         padding: 7px 10px;
         pointer-events: none;
-        @include color($link);
+        @include cfg.color($link);
     }
 
     .are-select {
@@ -82,25 +82,25 @@
         outline: none;
         user-select: none;
         
-        @include background($white);
-        @include border(#dadada);
-        @include trans(border-color, box-shadow);
+        @include cfg.background(cfg.$white);
+        @include cfg.border(#dadada);
+        @include cfg.trans(border-color, box-shadow);
 
         &:focus, &:active{
-            @include border($primary);
+            @include cfg.border(cfg.$primary);
         }
 
         &.is-error{
-            @include border($danger);
+            @include cfg.border(cfg.$danger);
             
             &:focus{
-                @include border($danger);
+                @include cfg.border(cfg.$danger);
             }
         }
 
         &:disabled {
-            @include background(#dadada);
-            @include color($black);
+            @include cfg.background(#dadada);
+            @include cfg.color(cfg.$black);
         }
     }
 </style>

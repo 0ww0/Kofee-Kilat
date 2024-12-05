@@ -41,11 +41,11 @@
 <style lang="scss" scoped>
     .accordion-item {
         border: 1px solid;
-        @include border(#dadada);
+        @include cfg.border(#dadada);
     }
 
     .accordion-header {
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         align-items: center;
         padding: 10px;
 

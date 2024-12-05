@@ -13,7 +13,7 @@
 
 <style lang="scss" scoped>
     .copyright {
-        font-size: rem(12);
+        font-size: cfg.rem(12);
         user-select: none;
     }
 </style>

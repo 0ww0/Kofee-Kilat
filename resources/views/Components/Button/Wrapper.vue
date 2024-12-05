@@ -32,7 +32,7 @@
 <style lang="scss" scoped>
     .button-group {
         width: 100%;
-        @include flex(row);
+        @include cfg.flex(row);
 
         :deep(.button) {
             &:not(:last-child) {
@@ -42,7 +42,7 @@
         }
 
         &.is-column {
-            @include flex(column);
+            @include cfg.flex(column);
 
             :deep(.button) {
                 &:not(:last-child) {

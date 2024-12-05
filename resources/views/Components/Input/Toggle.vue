@@ -53,7 +53,7 @@
     .toggle-label {
         position: relative;
         width: 100%;
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         align-items: center;
 
         &:not(:last-child) {

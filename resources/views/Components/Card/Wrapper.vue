@@ -26,7 +26,7 @@
         flex-basis: 0;
         flex-shrink: 1;
         flex-grow: 1;
-        padding: rem(12);
+        padding: cfg.rem(12);
     }
 
     .is {

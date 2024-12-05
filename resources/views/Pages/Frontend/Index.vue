@@ -8,6 +8,6 @@
 
 <style lang="scss" scoped>
     div {
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
     }
 </style>

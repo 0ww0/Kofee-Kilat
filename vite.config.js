@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import vueDevTools from 'vite-plugin-vue-devtools';
 import path from 'path'
 
 export default defineConfig({
@@ -8,6 +9,9 @@ export default defineConfig({
         laravel({
             input: 'resources/scripts/app.js',
             refresh: true,
+        }),
+        vueDevTools({
+            appendTo: 'resources/scripts/app.js'
         }),
         vue({
             template: {
@@ -21,7 +25,8 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "#config";`
+                additionalData: `@use "/resources/styles/config" as cfg;`,
+                api: 'modern-compiler' // or "modern"
             },
         },
     },

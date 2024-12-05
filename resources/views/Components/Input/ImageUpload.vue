@@ -101,13 +101,13 @@
 .upload-label {
     position: relative;
     width: 100%;
-    font-size: rem(14);
+    font-size: cfg.rem(14);
     line-height: 1.5;
     padding: 5px;
 }
 
 .file-wrapper {
-    @include flex(column, nowrap);
+    @include cfg.flex(column, nowrap);
     align-items: flex-start;
     width: 100%;
     padding: 10px;
@@ -115,11 +115,11 @@
     border-radius: 4px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    @include border(#dadada);
+    @include cfg.border(#dadada);
 }
 
 .file-icon {
-    @include flex(row, nowrap);
+    @include cfg.flex(row, nowrap);
     align-items: center;
     justify-content: center;
     border: 1px solid;
@@ -128,13 +128,13 @@
     outline: none;
     user-select: none;
 
-    @include background($white);
-    @include border(#dadada);
-    @include trans(border-color, box-shadow);
+    @include cfg.background(cfg.$white);
+    @include cfg.border(#dadada);
+    @include cfg.trans(border-color, box-shadow);
 
     &:focus,
     &:active {
-        @include border($primary);
+        @include cfg.border(cfg.$primary);
     }
 
     span {
@@ -150,11 +150,11 @@
     border-radius: 4px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    @include border(#dadada);
+    @include cfg.border(#dadada);
 }
 
 .file-block {
-    @include flex(row, nowrap);
+    @include cfg.flex(row, nowrap);
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -174,7 +174,7 @@
     }
 
     .remove-block {
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         align-items: center;
         justify-content: center;
         padding: 10px;

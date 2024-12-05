@@ -25,13 +25,13 @@
     header {
         position: relative;
         height: 100%;
-        @include flex(row);
+        @include cfg.flex(row);
         align-items: center;
         justify-content: space-between;
     }
 
     .segment {
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         align-items: center;
     }
 </style>

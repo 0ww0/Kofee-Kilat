@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:math";
 /// Select all children from the first to `$num`.
 /// @group with-arguments
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
@@ -128,7 +130,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 /// @param {number} $num - id of the child
 @mixin middle($num) {
-    &:nth-child(#{round($num * 0.5)}) {
+    &:nth-child(#{math.round($num * 0.5)}) {
         @content;
     }
 }
@@ -172,7 +174,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin at-least($num) {
     $selector: &;
-    $child: nth(nth($selector, -1), -1);
+    $child: list.nth(list.nth($selector, -1), -1);
 
     &:nth-last-child(n + #{$num}),
     &:nth-last-child(n + #{$num}) ~ #{$child} {
@@ -187,7 +189,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin at-most($num) {
     $selector: &;
-    $child: nth(nth($selector, -1), -1);
+    $child: list.nth(list.nth($selector, -1), -1);
 
     &:nth-last-child(-n + #{$num}):first-child,
     &:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
@@ -201,7 +203,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin in-between($min, $max) {
     $selector: &;
-    $child: nth(nth($selector, -1), -1);
+    $child: list.nth(list.nth($selector, -1), -1);
 
     &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child,
     &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child

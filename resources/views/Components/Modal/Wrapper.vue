@@ -108,14 +108,14 @@
 <style lang="scss" scoped>
     .modal {
         position: relative;
-        @include background($white);
+        @include cfg.background($white);
         overflow-x: auto;
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 450px;
         border-radius: 5px;
-        margin: rem(14);
+        margin: cfg.rem(14);
         z-index: 1;
 
         &-backdrop {
@@ -124,7 +124,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            @include background($dark, 0.5);
+            @include cfg.background($dark, 0.5);
             display: flex;
             justify-content: center;
             align-items: flex-start;

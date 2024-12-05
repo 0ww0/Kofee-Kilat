@@ -65,25 +65,25 @@
 <style lang="scss" scoped>
     .button {
         position: relative;
-        @include flex(row, nowrap);
+        @include cfg.flex(row, nowrap);
         align-items: center;
         justify-content: center;
         border: 1px solid;
-        padding: calc(rem(8) - 1px) rem(16);
+        padding: calc(cfg.rem(8) - 1px) cfg.rem(16);
         border-radius: 2px;
-        font-size: rem(14);
+        font-size: cfg.rem(14);
         cursor: pointer;
         text-align: center;
         white-space: nowrap;
         user-select: none;
         text-transform: uppercase;
         font-weight: 400;
-        @include background(white);
-        @include trans(background-color, color, border-color);
+        @include cfg.background(white);
+        @include cfg.trans(background-color, color, border-color);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
         &.row-reverse {
-            @include flex(row-reverse, nowrap);
+            @include cfg.flex(row-reverse, nowrap);
         }
 
         &:active, &:hover {
@@ -129,20 +129,20 @@
     }
 
     .is-default {
-        @include color(#3e3e3e);
-        @include border(#dadada);
+        @include cfg.color(#3e3e3e);
+        @include cfg.border(#dadada);
 
         &:active, &:hover {
-            @include border(#2a2a2a);
+            @include cfg.border(#2a2a2a);
         }
     }
 
     .is-primary {
-        @include background($primary);
-        @include border($primary);
+        @include cfg.background(cfg.$primary);
+        @include cfg.border(cfg.$primary);
 
         &:active, &:hover {
-            @include border($black);
+            @include cfg.border(cfg.$black);
         }
     }
 </style>

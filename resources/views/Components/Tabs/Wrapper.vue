@@ -105,9 +105,9 @@
 .tabs-list {
     list-style: none;
     width: calc(100%);
-    @include flex(row, nowrap);
-    @include background(#f3f5fd);
-    font-size: rem(14);
+    @include cfg.flex(row, nowrap);
+    @include cfg.background(#f3f5fd);
+    font-size: cfg.rem(14);
 
     li {
         width: 100%;
@@ -118,12 +118,12 @@
         cursor: pointer;
 
         &.is-active {
-            @include background($dark);
-            @include color($light);
+            @include cfg.background($dark);
+            @include cfg.color($light);
         }
 
         &.is-disabled {
-            @include background($dark, 0.5);
+            @include cfg.background($dark, 0.5);
             pointer-events: none;
         }
     }

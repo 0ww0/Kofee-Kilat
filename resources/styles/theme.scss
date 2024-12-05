@@ -1,19 +1,22 @@
+@use "constant/var";
+@use "theme/mixin";
+
 .theme-system {
     color-scheme: light;
-    @include theme($light, $dark, $dark, 0);
+    @include mixin.theme(var.$light, var.$dark, var.$dark, 0);
 
     @media (prefers-color-scheme: dark) {
         color-scheme: dark;
-        @include theme($dark, $light, $white, 100);
+        @include mixin.theme(var.$dark, var.$light, var.$white, 100);
     }
 }
 
 .theme-dark {
     color-scheme: dark;
-    @include theme($dark, $light, $white, 100);
+    @include mixin.theme(var.$dark, var.$light, var.$white, 100);
 }
 
 .theme-light {
     color-scheme: light;
-    @include theme($light, $dark, $dark, 0);
+    @include mixin.theme(var.$light, var.$dark, var.$dark, 0);
 }

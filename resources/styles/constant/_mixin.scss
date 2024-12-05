@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "var";
+
 @use "sass:math";
 @use "sass:meta";
 @use "sass:color";
@@ -9,7 +12,7 @@
 }
 
 @mixin responsive-ratio($x, $y, $pseudo: true) {
-    $padding: unquote(math.div($y, $x) * 100 + "%");
+    $padding: string.unquote(math.div($y, $x) * 100 + "%");
 
     @if $pseudo {
         &:before {
@@ -24,7 +27,7 @@
 }
 
 @mixin responsive-padding($x, $y, $pseudo: true) {
-    $padding: unquote(math.div($y, $x) * (100 * 0.5) + "%");
+    $padding: string.unquote(math.div($y, $x) * (100 * 0.5) + "%");
 
     @if $pseudo {
         &:before {
@@ -47,83 +50,83 @@
 
 @mixin media($media) {
     @if $media == xs-dn {
-        @media ($max: $xs) {
+        @media (var.$max: var.$xs) {
             @content;
         }
     } @else if $media == xs-up {
-        @media ($min: calc($xs + 1px)) {
+        @media (var.$min: calc(var.$xs + 1px)) {
             @content;
         }
     } @else if $media == sm-dn {
-        @media ($max: $sm) {
+        @media (var.$max: var.$sm) {
             @content;
         }
     } @else if $media == sm-up {
-        @media ($min: calc($sm + 1px)) {
+        @media (var.$min: calc(var.$sm + 1px)) {
             @content;
         }
     } @else if $media == md-dn {
-        @media ($max: $md) {
+        @media (var.$max: var.$md) {
             @content;
         }
     } @else if $media == md-up {
-        @media ($min: calc($md + 1px)) {
+        @media (var.$min: calc(var.$md + 1px)) {
             @content;
         }
     } @else if $media == dp-dn {
-        @media ($max: $dp) {
+        @media (var.$max: var.$dp) {
             @content;
         }
     } @else if $media == dp-up {
-        @media ($min: calc($dp + 1px)) {
+        @media (var.$min: calc(var.$dp + 1px)) {
             @content;
         }
     } @else if $media == hd-dn {
-        @media ($max: $hd) {
+        @media (var.$max: var.$hd) {
             @content;
         }
     } @else if $media == hd-up {
-        @media ($min: calc($hd + 1px)) {
+        @media (var.$min: calc(var.$hd + 1px)) {
             @content;
         }
     } @else if $media == xs-sm {
-        @media ($max: $sm) and ($min: $xs) {
+        @media (var.$max: var.$sm) and (var.$min: var.$xs) {
             @content;
         }
     } @else if $media == xs-md {
-        @media ($max: $md) and ($min: $xs) {
+        @media (var.$max: var.$md) and (var.$min: var.$xs) {
             @content;
         }
     } @else if $media == xs-dp {
-        @media ($max: $dp) and ($min: $xs) {
+        @media (var.$max: var.$dp) and (var.$min: var.$xs) {
             @content;
         }
     } @else if $media == xs-hd {
-        @media ($max: $hd) and ($min: $xs) {
+        @media (var.$max: var.$hd) and (var.$min: var.$xs) {
             @content;
         }
     } @else if $media == sm-md {
-        @media ($max: $md) and ($min: $sm) {
+        @media (var.$max: var.$md) and (var.$min: var.$sm) {
             @content;
         }
     } @else if $media == sm-dp {
-        @media ($max: $dp) and ($min: $sm) {
+        @media (var.$max: var.$dp) and (var.$min: var.$sm) {
             @content;
         }
     } @else if $media == sm-hd {
-        @media ($max: $hd) and ($min: $sm) {
+        @media (var.$max: var.$hd) and (var.$min: var.$sm) {
             @content;
         }
     } @else if $media == md-dp {
-        @media ($max: $dp) and ($min: $md) {
+        @media (var.$max: var.$dp) and (var.$min: var.$md) {
             @content;
         }
     } @else if $media == md-hd {
-        @media ($max: $hd) and ($min: $md) {
+        @media (var.$max: var.$hd) and (var.$min: var.$md) {
             @content;
         }
     } @else if $media == dp-hd {
-        @media ($max: $hd) and ($min: $dp) {
+        @media (var.$max: var.$hd) and (var.$min: var.$dp) {
             @content;
         }
     }
@@ -232,8 +235,8 @@ $browser-context: 16;
         background-color: rgba($color, $opacity);
         background-image: linear-gradient(
             $deg,
-            rgba($black, 0),
-            rgba($black, 0.25)
+            rgba(var.$black, 0),
+            rgba(var.$black, 0.25)
         );
     }
 }
@@ -249,7 +252,7 @@ $browser-context: 16;
 }
 
 @function rand($min, $max) {
-    @return unquote($min + math.floor(random() * (($max - $min) + 1)) + "%");
+    @return string.unquote($min + math.floor(math.random() * (($max - $min) + 1)) + "%");
 }
 
 @mixin neustyle(
@@ -278,15 +281,15 @@ $browser-context: 16;
     }
 
     $out: $topX $topY ($v * 3) rgba(#fff, 0.7),
-        $topX * -1 $topY * -1 ($v * 3) darken($color, 12),
+        $topX * -1 $topY * -1 ($v * 3) color.adjust($color, $lightness: -12),
         inset $topX $topY ($v * 6) rgba(#fff, 0.1),
-        inset $topX * -1 $topY * -1 ($v * 6) darken($color, 0);
+        inset $topX * -1 $topY * -1 ($v * 6) color.adjust($color, $lightness: -0);
 
     $in: $topX $topY ($v * 5) rgba(#fff, 0.2),
-        $topX * -1 $topY * -1 ($v * 3) darken($color, 0),
+        $topX * -1 $topY * -1 ($v * 3) color.adjust($color, $lightness: -0),
         inset $topX $topY ($v * 6) rgba(#fff, 0.6),
         inset math.div($topX, 2) math.div($topY, 2) ($v) rgba(#fff, 0.2),
-        inset $topX * -1 $topY * -1 ($v * 3) darken($color, 10);
+        inset $topX * -1 $topY * -1 ($v * 3) color.adjust($color, $lightness: -10);
 
     @if $inset {
         box-shadow: $in;
